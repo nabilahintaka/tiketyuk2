@@ -40,11 +40,11 @@ export async function POST(req: NextRequest) {
         // Prioritas: custom > cdn > proxy
         const url = data.custom || data.cdn || data.proxy;
         if (url) {
-          
+
           return NextResponse.json({ url });
         }
       } catch (e: any) {
-        
+
       }
     }
 
@@ -53,10 +53,10 @@ export async function POST(req: NextRequest) {
     const urlMatch = text.match(/https?:\/\/[^\s"'<>]+/i);
     if (urlMatch) return NextResponse.json({ url: urlMatch[0] });
 
-    
+
     return NextResponse.json({ error: 'Upload gagal — URL tidak ditemukan' }, { status: 500 });
   } catch (error: any) {
-    
+
     return NextResponse.json({ error: error?.message || 'Unknown error' }, { status: 500 });
   }
 }
