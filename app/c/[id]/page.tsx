@@ -602,7 +602,7 @@ export default function ConcertDetailPage() {
                             onClick={() => setForm(prev => ({ ...prev, ticketCount: String(Math.min(parseInt(concert?.maxTicket || '10', 10), parseInt(prev.ticketCount || '1', 10) + 1)) }))}
                             className="px-4 py-3 text-violet-400 hover:text-violet-700 hover:bg-violet-100 transition-all text-lg font-black select-none"
                           >+</button>
-                        </div>                    >+</button>
+                        </div>
                         </div>
                         {form.serviceType === 'Jaswar' && parseInt(form.ticketCount || '1', 10) < 2 && (
                           <span className="text-[11px] text-amber-600 font-bold animate-pulse">⚠️ Min. 2 tiket untuk Jaswar</span>
